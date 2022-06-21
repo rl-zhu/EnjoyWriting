@@ -13,4 +13,4 @@ You may also see any lint errors in the console.
 
 ## Back-end
 ### `node server.js`
-Runs the app in the development mode.\
+Runs the app in the development mode.
