@@ -10,9 +10,11 @@ class LoginStore {
         makeAutoObservable(this)
 
     }
-    getToken = async ({ username, password }) => {
+    getToken = async ({ username, password, functionto }) => {
         // console.log('token', username, password)
-        const res = await http.post('http://localhost:50000/home/login',
+        console.log('register in getToken')
+        console.log(`to    http://localhost:50000/home/${functionto}`)
+        const res = await http.post(`http://localhost:50000/home/${functionto}`,
             qs.stringify({ username, password }),
             {
                 params: {
@@ -22,7 +24,7 @@ class LoginStore {
             // {username, password}
         )
 
-        // use token to store in memory
+        
         this.token = res.data.token
         console.log('token is ', res.data.token)
         // console.log(res)

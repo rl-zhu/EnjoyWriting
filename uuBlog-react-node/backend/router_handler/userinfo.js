@@ -1,12 +1,12 @@
+const { readdirSync } = require('fs')
 const db = require('../db/usersdb')
 
 exports.getUserInfo= (req, res)=>{
-    // res.send('get userinfo')
-    // console.log(req.auth)
+    console.log("getUserInfo")
     const sql = `select id, username, nickname, email, user_pic from users where id=?`
-   
-
-    db.query (sql, req.auth.id,(err, results)=>{
+    console.log("req.auth", req.auth)
+    
+    db.query (sql, req.auth.id, (err, results)=>{
         // console.log(results.length)
         if(err) return res.cc(err)
         if(results.length !== 1) return res.cc('query error')

@@ -9,7 +9,7 @@ import Publish from './pages/Layout/Publish';
 import Profile from './pages/Layout/Profile';
 import Article from './pages/Layout/Article/index'
 
-
+import Register from './pages/register';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         {/* <Button type="dashed">Dashed Button</Button> */}
         <Routes>
           <Route path='/' element={<Login />}> </Route>
+          <Route path='/register' element={<Register />}> </Route>
 
           <Route path='/my' element={
             <AuthComponent>

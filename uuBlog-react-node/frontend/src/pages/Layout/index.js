@@ -27,6 +27,8 @@ const GeekLayout = () => {
         loginStore.loginOut()
         navigate('/')
     }
+    const Token = loginStore.token
+    console.log("Token .........", Token)
 
     function getItem(label, key, icon, children, type) {
         return {

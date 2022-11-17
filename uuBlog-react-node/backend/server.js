@@ -36,7 +36,6 @@ const config = require('./config')
 const { expressjwt: jwt } = require("express-jwt");
 app.use(jwt({secret: config.jwtSecretKey, algorithms: ["HS256"] }).unless({ path: [/^\/home/] }))
 
-
 // import and use userRouter
 const userRouter = require('./router/user')
 // Add uniform prefix

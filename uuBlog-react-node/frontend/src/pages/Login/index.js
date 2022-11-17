@@ -13,12 +13,12 @@ function Login() {
  
     const onFinish = async(values) => {
         console.log(values)
-       
+        const functionto = 'login'
         // loginStore.getToken(values)
         await loginStore.getToken({
             username: values.username,
             password: values.password,
-
+            functionto
         })
     //    //not able to do destructure
     //     // var {phone, passw} = values
@@ -38,10 +38,11 @@ function Login() {
 
     return (
         <div className="login">
-         
-
+            
+        
             <Card className="login-container">
                 {/* <img ></img> */}
+                <h1> Login</h1>
                 <Form 
                     validateTrigger={['onBlur', 'onChange']}
                     onFinish = {onFinish}
@@ -89,6 +90,7 @@ function Login() {
                             Submit
                         </Button>
                     </Form.Item>
+                    <Button href='/register'>Register</Button>
                 </Form>
             </Card>
 

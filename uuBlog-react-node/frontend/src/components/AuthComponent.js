@@ -6,7 +6,7 @@ function AuthComponent ({ children}){
     if(isToken){
         return <>{children}</>
 
-    }else {
+    } else {
         return <Navigate to='/' replace />
     }
 }
@@ -15,4 +15,3 @@ export {
     AuthComponent
 }
 
-{/* <AuthComponent>here is the children</AuthComponent> */}
